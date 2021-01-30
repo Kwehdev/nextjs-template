@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { I18NContextProvider } from '../context/I18NContext'
 import { I18nResources } from './i18n'
 
 type ApplyContextProps = {
@@ -13,6 +14,5 @@ export default function ApplyGlobalContext({
   i18n,
   children,
 }: ApplyContextProps): JSX.Element {
-  console.log(i18n)
-  return <>{children}</>
+  return <I18NContextProvider {...i18n}>{children}</I18NContextProvider>
 }
